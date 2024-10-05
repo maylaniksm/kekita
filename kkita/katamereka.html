@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Pelanggan - Kekita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Testimoni Pelanggan</h1>
+            <img src="/public/images/logo.png" alt="Kekita Logo" class="h-8">
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <h3 class="font-semibold">Shelly Kurnia</h3>
+                </div>
+                <p class="text-gray-600">Sebagai donatur, saya merasa sangat puas dengan Kekita. Setiap donasi yang saya berikan selalu dilaporkan dengan detail, jadi saya tahu persis kemana uang saya disalurkan. Rasanya sangat memuaskan bisa membantu anak-anak yang benar-benar membutuhkan dengan cara yang mudah dan aman.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <h3 class="font-semibold">Mey</h3>
+                </div>
+                <p class="text-gray-600">Melalui Kekita, saya dapat berkontribusi secara langsung kepada anak yatim yang membutuhkan. Saya bisa melihat dampak nyata dari donasi yang saya berikan, dan itu memberi saya kebahagiaan yang luar biasa. Platform ini benar-benar memudahkan saya untuk berbagi dengan mereka yang membutuhkan.</p>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-8">
+            <button onclick="redirectToUlasan()" class="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToUlasan() {
+            window.location.href = 'ulasan.html';
+        }
+    </script>
+</body>
+</html>
