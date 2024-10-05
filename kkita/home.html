@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kekita - Home</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-blue-500 text-3xl font-bold">
+            <img src="/public/images/logo.png" alt="Kekita Logo" class="h-8">
+        </a>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
+            <a href="aboutus.html" class="text-gray-600 hover:text-gray-800">About Us</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800">Fundraiser</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+            <button onclick="logout()" class="px-4 py-2 text-gray-600 hover:text-gray-800">Logout</button>
+            <div class="relative" id="profileDropdown">
+                <button onclick="toggleProfileMenu()" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+                <div id="profileMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden">
+                    <a href="lihat_profil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lihat Profil</a>
+                    <a href="edit_profil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit Profil</a>
+                </div>
+            </div>
+        </div>
+        <button id="menuToggle" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden">
+        <nav class="px-4 pt-2 pb-4 space-y-2">
+            <a href="#" class="block py-2 text-gray-600 hover:text-gray-800">Home</a>
+            <a href="aboutus.html" class="block py-2 text-gray-600 hover:text-gray-800">About Us</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-gray-800">Fundraiser</a>
+            <a href="lihat_profil.html" class="block py-2 text-gray-600 hover:text-gray-800">Lihat Profil</a>
+            <a href="edit_profil.html" class="block py-2 text-gray-600 hover:text-gray-800">Edit Profil</a>
+            <button onclick="logout()" class="block w-full text-left py-2 text-gray-600 hover:text-gray-800">Logout</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="relative h-[calc(100vh-72px)] min-h-[400px]">
+        <img src="/public/images/image1.png" alt="Children smiling" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">BERBAGI BERSAMA KEKITA</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8">untuk keberlanjutan kehidupan bersama</p>
+            <button onclick="redirectToDonate()" class="bg-blue-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-600 transition duration-300">
+                Donate now
+            </button>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 sm:mb-0">Urgent campaign</h2>
+                <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center">
+                    See more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/public/images/image2.png" alt="Donasi ke Panti Asuhan Melati" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Donasi ke Panti Asuhan Melati</h3>
+                        <div class="mb-4">
+                            <div class="text-sm text-gray-600 mb-1">Dana terkumpul</div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-blue-600 font-semibold">Rp 22.060.000</div>
+                                <div class="text-sm text-gray-500">300 Donatur</div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <button onclick="redirectToDonate()" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Donasikan</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/public/images/image3.png" alt="Bantu Ardi untuk kelancaran hidupnya yang yatim piatu" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Bantu Ardi untuk kelancaran hidupnya yang yatim piatu</h3>
+                        <div class="mb-4">
+                            <div class="text-sm text-gray-600 mb-1">Dana terkumpul</div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-blue-600 font-semibold">Rp 1.010.000</div>
+                                <div class="text-sm text-gray-500">300 Donatur</div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <button onclick="redirectToDonate()" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Donasikan</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/public/images/image4.png" alt="Bantu donasi ke panti asuhan mawar" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Bantu donasi ke panti asuhan mawar</h3>
+                        <div class="mb-4">
+                            <div class="text-sm text-gray-600 mb-1">Dana terkumpul</div>
+                            <div class="flex justify-between items-center">
+                                <div class="text-blue-600 font-semibold">Rp 6.900.000</div>
+                                <div class="text-sm text-gray-500">300 Donatur</div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <button onclick="redirectToDonate()" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Donasikan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-12">Mengapa pilih <img src="/public/images/logo.png" alt="Kekita Logo" class="inline h-8 align-baseline"></h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2">
+                    <img src="/public/images/image5.svg" alt="People distributing donations" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="w-full md:w-1/2 space-y-6">
+                    <p class="text-gray-600 mb-6">Kekita hadir menjadi solusi bagi kamu yang ingin donasi</p>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <img src="/public/images/jam.svg" alt="Clock icon" class="w-6 h-6">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Akses Langsung ke Anak Yatim dan Panti Asuhan</h3>
+                            <p class="text-gray-600">Kekita memfasilitasi hubungan langsung antara donatur dan anak yatim serta panti asuhan</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <img src="/public/images/kemudahan.svg" alt="Ease of use icon" class="w-6 h-6">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Kemudahan Bertransaksi</h3>
+                            <p class="text-gray-600">Kekita mempermudah proses donasi</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <img src="/public/images/transparansi.svg" alt="Transparency icon" class="w-6 h-6">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Transparansi Donasi</h3>
+                            <p class="text-gray-600">Kekita memastikan setiap donasi yang diberikan oleh pengguna</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-500 mb-4">Bagaimana donasi <img src="/public/images/logo.png" alt="Kekita Logo" class="inline h-8 align-baseline">?</h2>
+                    <p class="text-gray-600 mb-6">Kekita menyediakan platform yang mudah dan aman untuk berdonasi</p>
+                    <button onclick="redirectToDonate()" class="bg-blue-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-blue-600 transition duration-300">
+                        Donasi yuk!
+                    </button>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="/public/images/image6.png" alt="Donation box with food items" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New testimonial section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-12">Kata Mereka</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <h3 class="font-semibold">Wulan</h3>
+                    </div>
+                    <p class="text-gray-600">Sebagai donatur, saya merasa sangat puas dengan Kekita. Setiap donasi yang saya berikan selalu digunakan dengan detail, jadi saya tahu persis kemana uang saya disalurkan. Rasanya sangat memuaskan bisa membantu anak-anak yang benar-benar membutuhkan dengan cara yang mudah dan aman.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <h3 class="font-semibold">Fitri</h3>
+                    </div>
+                    <p class="text-gray-600">Melalui Kekita, saya dapat berkontribusi secara langsung kepada anak yatim yang membutuhkan. Saya bisa melihat dampak nyata dari donasi yang saya berikan, dan itu memberi saya kebahagiaan yang luar biasa. Platform ini benar-benar memudahkan saya untuk berbagi dengan mereka yang membutuhkan.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button onclick="redirectToUlasan()" class="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-blue-50 py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <img src="/public/images/logo.png" alt="Kekita Logo" class="h-8">
+                <p class="text-sm text-gray-600">Kkita or Yayasan Pelita Cakrawala Inspirasi is a non-profit organization registered under the Indonesian government under</p>
+                <img src="/public/images/sosialmedia.png" alt="Social Media Icons" class="h-8">
+                <div class="relative">
+                    <input type="email" placeholder="Your Email" class="w-full py-2 px-4 rounded-full bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm">Subscribe</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">About Us</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Our Service</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Training</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Consulting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Program</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Urgent campaign</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Featured campaign</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Initiative campaign</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
+            <p>Copyrights ©2024 Yayasan Pelita Cakrawala Inspirasi & PT Askara Asasta Indonesia (Asasi) | CharityLights. All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function redirectToDonate() {
+        window.location.href = 'donasi.html';
+    }
+
+    function redirectToUlasan() {
+        window.location.href = 'ulasan.html';
+    }
+
+    function logout() {
+        // Implement logout logic here
+        window.location.href = 'index.html';
+    }
+
+    function toggleProfileMenu() {
+        const profileMenu = document.getElementById('profileMenu');
+        profileMenu.classList.toggle('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close the profile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const profileDropdown = document.getElementById('profileDropdown');
+            const profileMenu = document.getElementById('profileMenu');
+            if (!profileDropdown.contains(event.target)) {
+                profileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</body>
+</html>

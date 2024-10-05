@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kekita - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-sky-100">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-blue-500 text-3xl font-bold">
+                <img src="/public/images/logo.png" alt="Kekita Logo" class="h-8">
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="home.html" class="text-gray-600 hover:text-gray-800">Home</a>
+                <a href="aboutus.html" class="text-gray-600 hover:text-gray-800">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Fundraiser</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="logout()" class="px-4 py-2 text-gray-600 hover:text-gray-800">Logout</button>
+                <div class="relative" id="profileDropdown">
+                    <button onclick="toggleProfileMenu()" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </button>
+                    <div id="profileMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden">
+                        <a href="lihat_profil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lihat Profil</a>
+                        <a href="edit_profil.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit Profil</a>
+                    </div>
+                </div>
+            </div>
+            <button id="menuToggle" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden">
+            <nav class="px-4 pt-2 pb-4 space-y-2">
+                <a href="home.html" class="block py-2 text-gray-600 hover:text-gray-800">Home</a>
+                <a href="aboutus.html" class="block py-2 text-gray-600 hover:text-gray-800">About Us</a>
+                <a href="#" class="block py-2 text-gray-600 hover:text-gray-800">Fundraiser</a>
+                <a href="lihat_profil.html" class="block py-2 text-gray-600 hover:text-gray-800">Lihat Profil</a>
+                <a href="edit_profil.html" class="block py-2 text-gray-600 hover:text-gray-800">Edit Profil</a>
+                <button onclick="logout()" class="block w-full text-left py-2 text-gray-600 hover:text-gray-800">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-[calc(100vh-72px)] bg-cover bg-center" style="background-image: url('/public/images/mask_group.png');">
+            <div class="absolute inset-0 bg-sky-200 opacity-70"></div>
+            <div class="relative z-10 container mx-auto px-4 py-12 flex flex-col items-center justify-center h-full text-center">
+                <div class="flex justify-center mb-8 space-x-4">
+                    <img src="/public/images/image1.png" alt="Children" class="w-32 h-24 object-cover rounded-lg shadow-lg">
+                    <img src="/public/images/image2.png" alt="Children" class="w-32 h-24 object-cover rounded-lg shadow-lg">
+                    <img src="/public/images/image3.png" alt="Children" class="w-32 h-24 object-cover rounded-lg shadow-lg">
+                </div>
+                <img src="/public/images/logo.png" alt="Kekita Logo" class="h-16 mb-6">
+                <p class="text-xl text-gray-800 mb-8 max-w-2xl">
+                    Kekita adalah platform donasi yang menghubungkan orang-orang yang ingin membantu dengan mereka yang membutuhkan bantuan di seluruh Indonesia.
+                </p>
+                <div class="w-full max-w-2xl h-48 bg-contain bg-center bg-no-repeat mb-8" style="background-image: url('/public/images/peta.png');"></div>
+                <h2 class="text-2xl font-bold text-blue-600">
+                    Bersama Wujudkan Indonesia yang Sehat, Merata!
+                </h2>
+            </div>
+        </section>
+
+        <section class="py-16 bg-sky-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-sky-600 mb-12">Bagaimana cara kami bekerja</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">Akses Langsung ke Anak Yatim dan Panti Asuhan</h3>
+                        <p class="text-gray-600 text-center">Kekita memfasilitasi hubungan langsung antara donatur dan anak yatim serta panti asuhan</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">Kemudahan Bertransaksi</h3>
+                        <p class="text-gray-600 text-center">Kekita mempermudah proses donasi</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">Transparansi Donasi</h3>
+                        <p class="text-gray-600 text-center">Kekita memastikan setiap donasi yang diberikan oleh pengguna</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-cover bg-center py-24" style="background-image: url('/public/images/image1.png');">
+            <div class="absolute inset-0 bg-sky-900 opacity-75"></div>
+            <div class="relative z-10 container mx-auto px-4 text-center text-white">
+                <img src="/public/images/logo.png" alt="Kekita Logo" class="h-16 mx-auto mb-6">
+                <h2 class="text-4xl font-bold mb-4">1 klik 1 Anak terbantu dan terselamatkan</h2>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function logout() {
+            window.location.href = 'index.html';
+        }
+
+        function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profileMenu');
+            profileMenu.classList.toggle('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close the profile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const profileDropdown = document.getElementById('profileDropdown');
+                const profileMenu = document.getElementById('profileMenu');
+                if (!profileDropdown.contains(event.target)) {
+                    profileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Ulasan - Kekita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center text-blue-500 mb-8">Tambah Ulasan</h1>
+        <form id="reviewForm" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Nama
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                    Ulasan
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="review" rows="4" placeholder="Tulis ulasan Anda" required></textarea>
+            </div>
+            <div class="flex items-center justify-center">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Tambah Ulasan
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Alert Message -->
+    <div id="alertMessage" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded shadow-lg hidden">
+        ULASAN BERHASIL DITAMBAHKAN
+    </div>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+            
+            // Store the new review in localStorage
+            const newReview = { name, review };
+            let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            reviews.unshift(newReview); // Add new review to the beginning of the array
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            
+            // Show the alert message
+            const alertMessage = document.getElementById('alertMessage');
+            alertMessage.classList.remove('hidden');
+            
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+            
+            // Hide the alert and redirect after 3 seconds
+            setTimeout(function() {
+                alertMessage.classList.add('hidden');
+                window.location.href = 'home.html';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
